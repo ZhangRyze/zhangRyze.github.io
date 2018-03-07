@@ -194,7 +194,7 @@ a:hover, a:active {
   margin: 0 auto;
 }
 .sidebar .logo-title .title h3 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -494,6 +494,7 @@ a:hover, a:active {
 /* about */
 .about {
   margin: 30px;
+  padding-left: 10px;
 }
 .about h3 {
   font-size: 22px;

@@ -1,34 +1,176 @@
-extends partial/layout
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
 
-include mixins
 
-block site_title
-    != page.title + " · " + config.title
+<title>Hello World · ZRyze</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author", content="zhangRyze">
+<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://yoursite.com/2018/03/01/hello-world/index.html">
+<meta property="og:site_name" content="ZRyze">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-06T04:49:38.095Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+<link rel="alternate" href="/atom.xml" title="ZRyze" type="application/atom+xml">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+<link rel="short icon" type="image/x-icon" href="/images/favicon.png">
+
+
+<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/blog_basic.css">
+<link rel="stylesheet" href="/css/fonts/iconfont.css">
+</head>
+<body>
+    <div class="sidebar animated fadeInDown">
+	<div class="logo-title">
+		<div class="title">
+			<img src="/images/logo@2x.png" style="width:127px;">
+			<h3 title=''>
+				<a href="/">ZRyze</a>
+			</h3>
+			
+				<div class="description">“不轻狂，枉年少”</div>
+			
+		</div>
+	</div>
+	<ul class="social-links">
+		
+		
+		
+		
+			<li>
+				<a href="https://weibo.com/u/2285298924">
+					<i class="iconfont ic-weibo"></i>
+				</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="https://github.com/zhangRyze">
+					<i class="iconfont ic-github"></i>
+				</a>
+			</li>
+		
+	</ul>
+	<div class="footer">
+	<div class="by_farbox">
+    	<a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281</a>
+	</div>
+</div>
+
+</div>
+
+    <div class="main">
+        <div class="page-top animated fadeInDown">
+    <div class="nav">
+        
+            <li>
+                
+                    <a href="/">首页</a>
+                
+            </li>
+        
+            <li>
+                
+                    <a href="/archives">归档</a>
+                
+            </li>
+        
+            <li>
+                
+                    <a class="current" href="/about">关于</a>
+                
+            </li>
+        
+    </div>
+    <div class="information">
+        <div class="back_btn">
+            <li>
+                
+            </li>
+        </div>
+    </div>
+</div>
+        <div class="content">
+	<div class="post-page">
+    	<div class="post animated fadeInDown">
+    <div class="post-title">
+        <h3>
+            
+                <a>Hello World</a>
+            
+        </h3>
+    </div>
+    
+        <div class="post-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+</div>
+    
+    <div class="post-footer">
+        <div class="meta">
+            <div class="info">
+                <i class="iconfont ic-date"></i>
+                <span class="date">2018-03-01</span>
+                
+                    
+                        <i class="iconfont ic-category"></i>
+                        <a href="/categories/12/" title="12" class="tag">12 </a>
+                    
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    	<div class="share">
+			<div class="evernote">
+				<a class="iconfont ic-evernote" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank"></a>
+			</div>
+			<div class="weibo">
+				<a class="iconfont ic-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+			</div>
+    	</div>
+    	<div class="pagination">
+				<ul class="clearfix">
+				
+				
+					<li class="pre pagbuttons">
+    					<a href="/2018/03/06/hexo测试/" role="navigation" title="hexo测试" class="btn">上一页</a>
+					</li>
+				
+				
+      				<li class="next pagbuttons">
+        				<a href="/2018/03/01/hexo-尝试/" role="navigation" title="hexo 尝试" class="btn">下一页</a>
+      				</li>
+				
+				</ul>
+    	</div>
+    	
+    		<!--  -->
+    	
+	</div>
+</div>
+
+    </div>
+</body>
+</html>
