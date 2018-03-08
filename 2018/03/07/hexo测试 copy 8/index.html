@@ -145,7 +145,7 @@
         var notify = 'false' == true ? true : false;
         var verify = 'false' == true ? true : false;
         var GUEST_INFO = ['nick','mail','link'];
-        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        var guest_info = 'nick'.split(',').filter(function(item){
             return GUEST_INFO.indexOf(item) > -1
         });
         guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
@@ -155,8 +155,8 @@
             verify: verify,
             appId: "H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz",
             appKey: "22gf5wKdGEiPgbbGCyUtz0fr",
-            avatar:'mm',
-            placeholder: "Just go go",
+            avatar:'monsterid',
+            placeholder: "说点什么吧",
             guest_info:guest_info,
             pageSize:'10'
         });
