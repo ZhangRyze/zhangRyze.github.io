@@ -14,7 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .ic-date:before { content: "\e63b"; }
 
 .ic-twitter:before { content: "\ecb3"; }

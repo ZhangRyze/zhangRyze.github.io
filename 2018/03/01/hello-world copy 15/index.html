@@ -5,25 +5,24 @@
 
 <title>Hello World · ZRyze</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="author", content="zhangRyze">
+<meta name="author" content="zhangRyze">
 
 <link rel="short icon" type="image/x-icon" href="/images/favicon.png">
 
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/blog_basic.css">
 <link rel="stylesheet" href="/css/fonts/iconfont.css">
+
 </head>
 <body>
     <div class="sidebar animated fadeInDown">
 	<div class="logo-title">
 		<div class="title">
-			<img src="/images/logo@2x.png" style="width:127px;">
+			<img src="/images/logo@2x.png" width="127">
 			<h3 title=''>
 				<a href="/">ZRyze</a>
 			</h3>
-			
-				<div class="description">“不轻狂，枉年少”</div>
-			
+			<div class="description">“不轻狂，枉年少”</div>
 		</div>
 	</div>
 	<ul class="social-links">
@@ -31,7 +30,7 @@
 		
 		
 		
-			<li>
+			<li class="icon-weibo">
 				<a href="https://weibo.com/u/2285298924">
 					<i class="iconfont ic-weibo"></i>
 				</a>
@@ -39,7 +38,7 @@
 		
 		
 		
-			<li>
+			<li class="icon-github">
 				<a href="https://github.com/zhangRyze">
 					<i class="iconfont ic-github"></i>
 				</a>
@@ -47,6 +46,9 @@
 		
 	</ul>
 	<div class="footer">
+	<div class="by_farbox">
+  		<a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank">Theme adapted from Anatole</a>
+	</div>
 	<div class="by_farbox">
     	<a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281</a>
 	</div>
@@ -113,7 +115,7 @@
         <div class="meta">
             <div class="info">
                 <i class="iconfont ic-date"></i>
-                <span class="date">2018-03-01</span>
+                <div class="date">2018-03-01</div>
                 
                     
                         <i class="iconfont ic-category"></i>
@@ -127,31 +129,55 @@
 </div>
 
     	<div class="share">
-			<div class="evernote">
-				<a class="iconfont ic-evernote" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank"></a>
-			</div>
-			<div class="weibo">
-				<a class="iconfont ic-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
-			</div>
+			<a class="evernote" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank">
+				<i class="iconfont ic-evernote"></i>
+			</a>
+			<a class="weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));">
+				<i class="iconfont ic-weibo"></i>
+			</a>
     	</div>
-    	<div class="pagination">
-				<ul class="clearfix">
-				
-				
-					<li class="pre pagbuttons">
-    					<a href="/2018/03/06/hexo测试/" role="navigation" title="hexo测试" class="btn">上一页</a>
-					</li>
-				
-				
-      				<li class="next pagbuttons">
-        				<a href="/2018/03/01/hexo-尝试/" role="navigation" title="hexo 尝试" class="btn">下一页</a>
-      				</li>
-				
-				</ul>
-    	</div>
-    	
-    		<!--  -->
-    	
+		<div class="pagination">
+	<ul class="clearfix">
+		
+		
+			<li class="pre pagbuttons">
+				<a href="/2018/03/07/hexo测试 copy 8/" role="navigation" class="btn">上一页</a>
+			</li>
+		
+		
+			<li class="next pagbuttons">
+			<a href="/2018/03/01/hello-world copy 8/" role="navigation" class="btn">下一页</a>
+			</li>
+		
+	</ul>
+</div>
+
+
+    		
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <div id="comment" class="comment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            appId: "H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz",
+            appKey: "22gf5wKdGEiPgbbGCyUtz0fr",
+            avatar:'mm',
+            placeholder: "Just go go",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+
 	</div>
 </div>
 

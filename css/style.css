@@ -208,24 +208,29 @@ a:hover, a:active {
   font-weight: bold;
 }
 .sidebar .social-links {
-  list-style: none;
-  padding: 0;
-  font-size: 14px;
-  text-align: center;
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 30px;
 }
 .sidebar .social-links i {
-  margin-right: 3px;
+    display: block;
+    font-size: 30px;
+    margin-top: 5px;
 }
 .sidebar .social-links li {
-  display: inline;
-  padding: 0 4px;
-  line-height: 0;
+    padding: 0 4px;
 }
 .sidebar .social-links a {
-  color: #565654;
+    display: block;
+    color: #565654;
 }
 .sidebar .social-links a:hover {
-  color: #4786D6;
+    color: #4786D6;
 }
 
 .post {
@@ -286,20 +291,22 @@ a:hover, a:active {
 }
 .post .post-footer .meta {
   max-width: 100%;
-  height: 25px;
   color: #bbbbbb;
+  display: flex;
 }
 .post .post-footer .meta .info {
-  float: left;
-  font-size: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
 }
 .post .post-footer .meta .info .date {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 .post .post-footer .meta a {
-  text-decoration: none;
-  color: #bbbbbb;
-  padding-right: 10px;
+    display: block;
+    text-decoration: none;
+    color: #bbbbbb;
+    padding-right: 10px;
 }
 .post .post-footer .meta a:hover {
   color: #4786D6;
@@ -443,52 +450,42 @@ a:hover, a:active {
   margin: 0px 30px;
   display: inline-flex;
 }
-
-.evernote {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
+.share a i{
+    font-size: 30px;
+}
+.share a{
+    width: 32px;
+    height: 32px;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.share a+a{
+    margin-left: 10px;
+}
+.share a.evernote {
   background-color: #3E3E3E;
-  margin-right: 5px;
-}
-.evernote a {
   color: #fff;
-  padding: 11px;
-  font-size: 12px;
 }
-.evernote a:hover {
-  color: #ED6243;
-  padding: 11px;
+.share .evernote:hover {
+  color: #2F69B3;
 }
 
-.weibo {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
+.share a.weibo {
   background-color: #ED6243;
-  margin-right: 5px;
-}
-.weibo a {
   color: #fff;
-  padding: 9px;
 }
-.weibo a:hover {
-  color: #BD4226;
+.share .weibo:hover {
+  color: #2F69B3;
 }
 
-.twitter {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
+.share a.twitter {
   background-color: #59C0FD;
-  margin-right: 5px;
-}
-.twitter a {
   color: #fff;
-  padding: 9px;
 }
-.twitter a:hover {
-  color: #4B9ECE;
+.share .twitter:hover {
+  color: #2F69B3;
 }
 
 /* about */
