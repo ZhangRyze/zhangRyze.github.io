@@ -448,7 +448,7 @@ a:hover, a:active {
 /* share */
 .share {
   margin: 0px 30px;
-  display: inline-flex;
+  display: flex;
 }
 .share a i{
     font-size: 30px;
@@ -529,7 +529,7 @@ a:hover, a:active {
 }
 
 /* 默认评论样式 */
-#fb_comments_container {
+.comment {
   margin: 30px;
 }
 
@@ -688,6 +688,6 @@ a.btn {
   }
 
   .share {
-    display: grid;
+    display: flex;
   }
 }

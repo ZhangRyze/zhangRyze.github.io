@@ -149,6 +149,7 @@
 </div>
 
 
+    	
     		
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
@@ -157,12 +158,12 @@
         var notify = 'false' == true ? true : false;
         var verify = 'false' == true ? true : false;
         var GUEST_INFO = ['nick','mail','link'];
-        var guest_info = 'nick'.split(',').filter(function(item){
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
             return GUEST_INFO.indexOf(item) > -1
         });
         guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
         window.valine = new Valine({
-            el: '.comment',
+            el: '#comment',
             notify: notify,
             verify: verify,
             appId: "H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz",
@@ -174,6 +175,7 @@
         });
     </script>
 
+    	
 	</div>
 </div>
 
