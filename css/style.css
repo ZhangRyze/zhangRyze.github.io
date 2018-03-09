@@ -112,61 +112,14 @@ a:hover, a:active {
   height: auto;
   float: right;
   width: 60%;
-  margin-top: 60px;
 }
-
-.page-top {
-  width: 60%;
-  position: fixed;
-  right: 0;
-  z-index: 3;
-  background-color: #fff;
-  height: 60px;
-  border-bottom: 1px solid #f2f2f2;
-}
-.page-top .nav {
+/* nav style */
+.nav-list{
+  padding: 0;
+  display: flex;
   list-style: none;
-  padding: 18px 30px;
-  float: left;
-  font-size: 12px;
-}
-.page-top .nav li {
-  position: relative;
-  display: initial;
-  padding-right: 20px;
-}
-.page-top .nav a {
-  color: #5A5A5A;
-}
-.page-top .nav a:hover {
-  color: #4786D6;
-}
-.page-top .nav a.current {
-  color: #5A5A5A;
-  padding-bottom: 22px;
-  border-bottom: 1px solid #5A5A5A;
-}
-.page-top .information {
-  float: right;
-  padding-top: 12px;
-  padding-right: 20px;
-}
-.page-top .information .avatar {
-  float: right;
-}
-.page-top .information .avatar img {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-}
-.page-top .information .back_btn {
-  float: left;
-  padding-top: 5px;
-  margin-right: -10px;
-}
-.page-top .information .back_btn li {
-  display: initial;
-  padding-right: 40px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidebar {
@@ -440,6 +393,20 @@ a:hover, a:active {
 .list-with-title .listing .listing-post a:hover {
   color: #4786D6;
 }
+.article-tag-list,
+.article-category-list{
+   padding: 0;
+}
+.article-tag-list li,
+.article-category-list li{
+  display: flex;
+  justify-content: space-between;
+}
+.article-tag-list li a,
+.article-category-list li a{
+  color: #8F8F8F;
+}
+
 
 /* share */
 .share {
@@ -655,7 +622,7 @@ a.btn {
     z-index: 1;
   }
   .sidebar .logo-title {
-    padding-top: 120px;
+    padding-top: 30px;
   }
   .sidebar .logo-title .title img {
     width: 100px;
@@ -664,19 +631,26 @@ a.btn {
     font-size: 20px;
   }
 
-  .page-top {
-    width: 100%;
-  }
-
   .post-title h3 {
     line-height: 1.6;
   }
 
   .content {
-    margin-top: 360px;
+    margin-top: 280px;
     width: 100%;
     z-index: 2;
     position: absolute;
+  }
+  /* nav style */
+  .nav-list{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+  }
+  .nav-list li+li{
+    margin-left: 10px;
   }
 
   .footer {
