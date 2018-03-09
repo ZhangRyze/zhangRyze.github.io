@@ -112,7 +112,7 @@ a:hover, a:active {
   height: auto;
   float: right;
   width: 60%;
-  padding-top: 60px;
+  margin-top: 60px;
 }
 
 .page-top {
@@ -673,7 +673,7 @@ a.btn {
   }
 
   .content {
-    padding-top: 420px;
+    margin-top: 420px;
     width: 100%;
     z-index: 2;
     position: absolute;
