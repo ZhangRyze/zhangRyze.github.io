@@ -27,7 +27,8 @@ ga('send', 'pageview');
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/blog_basic.css">
 <link rel="stylesheet" href="/css/fonts/iconfont.css">
-
+<script src="/js/jquery.min.js"></script>
+<script src="/js/script.js"></script>
 </head>
 <body>
     <div class="sidebar animated fadeInDown">
@@ -40,7 +41,6 @@ ga('send', 'pageview');
 			<div class="description">“不轻狂，枉年少”</div>
 		</div>
 	</div>
-	<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜一下试试吧"><input type="hidden" name="sitesearch" value="https://zhangryze.github.io"></form>
 	<ul class="nav-list">
         
     <li>
@@ -88,6 +88,13 @@ ga('send', 'pageview');
 				</a>
 			</li>
 		
+		
+			<li class="icon-search">
+				<a href="javascript:void(0)" onclick="openSearch()">
+					<i class="iconfont ic-search"></i>
+				</a>
+			</li>
+		
 	</ul>
 	<div class="footer">
 	<div class="by_farbox">
@@ -112,6 +119,24 @@ ga('send', 'pageview');
         </h3>
     </div>
     
+        <div class="post-sub-desc">
+    <div class="post-info">
+        <i class="iconfont ic-date"></i>
+        <div class="date">2017-04-11</div>
+        
+            
+                <i class="iconfont ic-category"></i>
+                <a href="/categories/一个前端菜鸟的自我修养/" title="一个前端菜鸟的自我修养" class="tag">一个前端菜鸟的自我修养 </a>
+            
+            <i class="iconfont ic-tag"></i>
+            
+                <a href="/tags/博客/" title="博客" class="tag">博客 </a>
+            
+        
+    </div>
+    <div class="post-hits" id="/2017/04/11/2017-04-11-CreateBlogExperience/" data-post-title="第一次开博客"></div>
+</div>
+
         <div class="post-content"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="尝试一个新的东西，讲讲心路历程"><a href="#尝试一个新的东西，讲讲心路历程" class="headerlink" title="尝试一个新的东西，讲讲心路历程"></a>尝试一个新的东西，讲讲心路历程</h2><p>心情还是比较激动，第一次开博客，用时一天多，不知道时间长与短，暂时用的是别人的模板，还有好多东西想要去完善，一步一个脚印吧，但看了看结构貌似自己也能写出来，暂时先这样吧。</p>
 <p>15年毕业于天津理工大学，14年就在公司开始实习，实习的时候会UI设计和一点点前端知识，就这么义无反顾的干起了前端的活，从一个程序小白（ps:但是内心很狂热）一步步成长到现在，越学越觉得自己是个小白，不知不觉已经两年多了，一直想建个自己的小站也是最近正在找工作，就探索了GitHub pages,了解了jekyll（用于生成静态网页的工具）和markdown，照着网上大神：</p>
 <ul>
@@ -120,24 +145,6 @@ ga('send', 'pageview');
 </ul>
 </div>
     
-    <div class="post-footer">
-        <div class="meta">
-            <div class="info">
-                <i class="iconfont ic-date"></i>
-                <div class="date">2017-04-11</div>
-                
-                    
-                        <i class="iconfont ic-category"></i>
-                        <a href="/categories/一个前端菜鸟的自我修养/" title="一个前端菜鸟的自我修养" class="tag">一个前端菜鸟的自我修养 </a>
-                    
-                    
-                        <i class="iconfont ic-tag"></i>
-                        <a href="/tags/博客/" title="博客" class="tag">博客 </a>
-                    
-                
-            </div>
-        </div>
-    </div>
 </div>
 
     	<div class="share">
@@ -194,5 +201,39 @@ ga('send', 'pageview');
 </div>
 
     </div>
+    
+    <div id="local-search-box" class="local-search-box" style="display: none">
+        <input class="local-search-input" type="text" id="local-search-input" name="q" results="0" placeholder="搜索" />
+        <div class="local-search-list" id="local-search-result">
+            <div class="local-search-prompt">搜一搜看看吧 ~</div>
+        </div>
+    </div>
+
+    <div id="modal-container-bg" class="modal-container-bg" style="display: none" onclick="closeSearch()"></div>
+    <!-- js start -->
+	<script src="//cdn1.lncld.net/static/js/3.6.0/av-min.js"></script>
+    <script>
+		AV.initialize({
+			appId: 'H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz',
+			appKey: '22gf5wKdGEiPgbbGCyUtz0fr'
+		});
+        $(function(){
+	    
+	            document.onkeydown = function(event) {
+	                var e = event || window.event || arguments.callee.caller.arguments[0];
+	                if (e && e.keyCode == 27) { // 按 Esc
+	                    closeSearch() //要做的事情
+	                }
+	            };
+
+	            var Counter = AV.Object.extend("Counter");
+	            // in post.html, so add 1 to hit counts
+	            addCount(Counter);
+	    
+        })
+    </script>
+    
+		<script src="/js/search.my.js"></script>
+    
 </body>
 </html>

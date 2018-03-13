@@ -27,7 +27,8 @@ ga('send', 'pageview');
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/blog_basic.css">
 <link rel="stylesheet" href="/css/fonts/iconfont.css">
-
+<script src="/js/jquery.min.js"></script>
+<script src="/js/script.js"></script>
 </head>
 <body>
     <div class="sidebar animated fadeInDown">
@@ -40,7 +41,6 @@ ga('send', 'pageview');
 			<div class="description">“不轻狂，枉年少”</div>
 		</div>
 	</div>
-	<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜一下试试吧"><input type="hidden" name="sitesearch" value="https://zhangryze.github.io"></form>
 	<ul class="nav-list">
         
     <li>
@@ -88,6 +88,13 @@ ga('send', 'pageview');
 				</a>
 			</li>
 		
+		
+			<li class="icon-search">
+				<a href="javascript:void(0)" onclick="openSearch()">
+					<i class="iconfont ic-search"></i>
+				</a>
+			</li>
+		
 	</ul>
 	<div class="footer">
 	<div class="by_farbox">
@@ -114,5 +121,39 @@ ga('send', 'pageview');
 
 
     </div>
+    
+    <div id="local-search-box" class="local-search-box" style="display: none">
+        <input class="local-search-input" type="text" id="local-search-input" name="q" results="0" placeholder="搜索" />
+        <div class="local-search-list" id="local-search-result">
+            <div class="local-search-prompt">搜一搜看看吧 ~</div>
+        </div>
+    </div>
+
+    <div id="modal-container-bg" class="modal-container-bg" style="display: none" onclick="closeSearch()"></div>
+    <!-- js start -->
+	<script src="//cdn1.lncld.net/static/js/3.6.0/av-min.js"></script>
+    <script>
+		AV.initialize({
+			appId: 'H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz',
+			appKey: '22gf5wKdGEiPgbbGCyUtz0fr'
+		});
+        $(function(){
+	    
+	            document.onkeydown = function(event) {
+	                var e = event || window.event || arguments.callee.caller.arguments[0];
+	                if (e && e.keyCode == 27) { // 按 Esc
+	                    closeSearch() //要做的事情
+	                }
+	            };
+
+	            var Counter = AV.Object.extend("Counter");
+	            // in post.html, so add 1 to hit counts
+	            addCount(Counter);
+	    
+        })
+    </script>
+    
+		<script src="/js/search.my.js"></script>
+    
 </body>
 </html>
