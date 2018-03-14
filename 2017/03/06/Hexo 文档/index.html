@@ -119,24 +119,34 @@ ga('send', 'pageview');
         </h3>
     </div>
     
-        <div class="post-sub-desc">
-    <div class="post-info">
-        <i class="iconfont ic-date"></i>
-        <div class="date">2017-03-06</div>
+        <div class="post-info">
+    <div>
         
-            
+            <div>
                 <i class="iconfont ic-category"></i>
-                <a href="/categories/12/" title="12" class="tag">12 </a>
-            
-            <i class="iconfont ic-tag"></i>
-            
-                <a href="/tags/vue/" title="vue" class="tag">vue </a>
-            
-                <a href="/tags/web/" title="web" class="tag">web </a>
-            
+                
+                    <a href="/categories/12/" title="12" class="tag">12 </a>
+                
+            </div>
+        
+        
+            <div>
+                <i class="iconfont ic-tag"></i>
+                
+                    <a href="/tags/vue/" title="vue" class="tag">vue </a>
+                
+                    <a href="/tags/web/" title="web" class="tag">web </a>
+                
+            </div>
         
     </div>
-    <div class="post-hits" id="/2017/03/06/Hexo 文档/" data-post-title="Hello World"></div>
+    <div>
+        <div>
+            <i class="iconfont ic-date"></i>
+            <div class="date">2017-03-06</div>
+        </div>
+        <div class="post-hits" id="post-/2017/03/06/Hexo 文档/" data-post-path="/2017/03/06/Hexo 文档/" data-post-title="Hello World"></div>
+    </div>
 </div>
 
         <div class="post-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -216,12 +226,9 @@ ga('send', 'pageview');
 
     <div id="modal-container-bg" class="modal-container-bg" style="display: none" onclick="closeSearch()"></div>
     <!-- js start -->
-	<script src="//cdn1.lncld.net/static/js/3.6.0/av-min.js"></script>
+	<script src="/js/av-live-query.js"></script>
     <script>
-		AV.initialize({
-			appId: 'H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz',
-			appKey: '22gf5wKdGEiPgbbGCyUtz0fr'
-		});
+		AV.initialize("H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz","22gf5wKdGEiPgbbGCyUtz0fr");
         $(function(){
 	    
 	            document.onkeydown = function(event) {

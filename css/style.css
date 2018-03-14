@@ -239,19 +239,27 @@ a:hover, a:active {
   color: #5F5F5F;
   font-size: 16px;
 }
-.post .post-sub-desc {
+.post .post-info {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #f2f2f2;
-    padding: 10px 0;
-}
-.post .post-info {
-    display: flex;
     align-items: center;
+    padding: 10px 0;
     font-size: 12px;
 }
-.post .post-info .date {
-    margin-right: 10px;
+.post .post-info>div{
+    display: flex;
+    align-items: center;
+}
+.post .post-info>div>div+div{
+    margin-left: 10px;
+}
+.post .post-info>div>div{
+    display: flex;
+    align-items: center;
+}
+.post .post-hits{
+    font-size: 12px;
 }
 .post .post-info a {
     display: block;
@@ -264,30 +272,6 @@ a:hover, a:active {
 }
 .post .post-info i {
   margin-right: 6px;
-}
-.post .post-info .tags {
-  padding-bottom: 15px;
-  font-size: 13px;
-}
-.post .post-info .tags ul {
-  list-style-type: none;
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-.post .post-info .tags ul li {
-  list-style-type: none;
-  margin: 0;
-  padding-right: 5px;
-  display: inline;
-}
-.post .post-finfo .tags a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.44);
-  font-weight: 400;
-}
-.post .post-info .tags a:hover {
-  text-decoration: none;
 }
 
 .pagination {
@@ -457,37 +441,6 @@ a:hover, a:active {
   font-size: 22px;
 }
 
-/* links*/
-.links {
-  padding: 30px;
-}
-.links h3 {
-  font-size: 22px;
-}
-.links a {
-  cursor: pointer;
-}
-
-/* 评论样式 */
-.comment-count {
-  color: #666;
-}
-
-.tab-community {
-  color: #666;
-}
-
-.read_more {
-  font-size: 14px;
-}
-
-.back-button {
-  padding-top: 30px;
-  max-width: 100px;
-  padding-left: 40px;
-  float: left;
-}
-
 /* 默认评论样式 */
 .comment {
   padding: 30px;
@@ -552,111 +505,9 @@ a.btn {
   padding: 6px 12px;
 }
 
-/* Menu样式 */
-.menu {
-  float: right;
-  padding-top: 30px;
-}
-.menu .btn-down {
-  margin: 0px;
-}
-.menu .btn-down li {
-  list-style: none;
-  width: 100px;
-}
-.menu .btn-down li a {
-  display: inline-block;
-  position: relative;
-  padding: 0.5em 1.25em;
-  outline: 0;
-  color: rgba(0, 0, 0, 0.44);
-  background: transparent;
-  font-size: 14px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  white-space: nowrap;
-  font-weight: 400;
-  font-style: normal;
-  border-radius: 999em;
-  margin-top: 5px;
-}
-.menu .btn-down li a:hover {
-  position: relative;
-  padding: 0.5em 1.25em;
-  outline: 0;
-  color: #fff;
-  background: #3CBD10;
-  font-size: 14px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  white-space: nowrap;
-  font-weight: 400;
-  font-style: normal;
-  border-radius: 999em;
-  margin-top: 5px;
-}
-.menu .btn-down div {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  float: right;
-}
-
 .page_404 {
   text-align: center;
   padding-top: 50px;
-}
-
-@media screen and (max-width: 960px) {
-  .sidebar {
-    width: 100%;
-    position: absolute;
-    border-right: none;
-    z-index: 1;
-  }
-  .sidebar .logo-title {
-    padding-top: 30px;
-  }
-  .sidebar .logo-title .title img {
-    width: 100px;
-  }
-  .sidebar .logo-title .title h3 {
-    font-size: 20px;
-  }
-
-  .post-title h3 {
-    line-height: 1.6;
-  }
-
-  .content {
-    margin-top: 280px;
-    width: 100%;
-    z-index: 2;
-    position: absolute;
-  }
-  /* nav style */
-  .nav-list{
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-  }
-  .nav-list li+li{
-    margin-left: 10px;
-  }
-
-  .footer {
-    display: none;
-  }
-
-  .share {
-    display: flex;
-  }
 }
 
 .modal-container-bg{
@@ -711,23 +562,106 @@ a.btn {
 .local-search-box ul li+li{
     border-top: 1px solid #ddd;
 }
-.local-search-box ul li a{
+.local-search-box ul li a.search-result-item>div:last-child{
+    display: flex;
+    align-items: center;
+    color: #666;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.local-search-box ul li a.search-result-item>div:last-child>div:first-child{
     display: flex;
     align-items: center;
 }
-.local-search-box ul li a .search-result-title{
-    flex: 1;
+.local-search-box ul li a.search-result-item>div:last-child>div:first-child>div+div{
+    margin-left: 10px;
 }
-.local-search-box ul li a .search-result-title div:last-child{
-    display: flex;
-    font-size: 12px;
-    color: #666;
-}
-.local-search-box ul li a .search-result-title i{
+.local-search-box ul li a.search-result-item i{
     font-size: 12px;
     color: #666;
     margin-right: 5px;
 }
-.local-search-box ul li a .search-result-title>div:last-child>div+div{
-    margin-left: 10px;
+
+
+@media screen and (max-width: 960px) {
+    .sidebar {
+        width: 100%;
+        position: absolute;
+        border-right: none;
+        z-index: 1;
+    }
+    .sidebar .logo-title {
+        padding-top: 30px;
+    }
+    .sidebar .logo-title .title img {
+        width: 100px;
+    }
+    .sidebar .logo-title .title h3 {
+        font-size: 20px;
+    }
+
+    .post-title h3 {
+        line-height: 1.6;
+    }
+
+    .content {
+        margin-top: 280px;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+    }
+    /* nav style */
+    .nav-list{
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: center;
+    }
+    .nav-list li+li{
+        margin-left: 10px;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .share {
+        display: flex;
+    }
+    .post .post-info{
+        flex-direction: column;
+        align-items: start;
+    }
+    .post .post-info>div:first-child{
+        flex-direction: column;
+        align-items: start;
+    }
+    .post .post-info>div:last-child{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .post .post-info>div>div+div{
+        margin-left: 0;
+    }
+
+    .local-search-box{
+        width: 80%;
+    }
+    .local-search-box ul li a.search-result-item>div:first-child{
+        font-size: 18px;
+    }
+    .local-search-box ul li a.search-result-item>div:last-child{
+        flex-direction: column;
+        align-items: start;
+    }
+    .local-search-box ul li a.search-result-item>div:last-child>div:first-child{
+        flex-direction: column;
+        align-items: start;
+    }
+    .local-search-box ul li a.search-result-item>div:last-child>div:first-child>div+div{
+        margin-left: 0;
+    }
+
+
 }

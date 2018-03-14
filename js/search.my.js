@@ -32,7 +32,6 @@ var searchFunc = function(path, search_id, content_id) {
                     if(data_url_decode.length == 6){
                         data_date = data_url_decode[1] + '-' + data_url_decode[2] + '-' + data_url_decode[3];
                     }
-                    console.log(data_date)
                     var index_title = -1;
                     var index_content = -1;
                     var first_occur = -1;
@@ -59,10 +58,15 @@ var searchFunc = function(path, search_id, content_id) {
                     // show search results
                     if (isMatch) {
                         str += "<li>";
-                        str += "<a href='"+ data_url +"'>";
-                        str += "<div class='search-result-title'><div>"+ data_title +"</div>";
-                        str += "<div><div><i class='iconfont ic-category'></i>"+ data.categories[0] +"</div><div><i class='iconfont ic-tag'></i>"+ data.tags[0] +"</div></div>";
-                        str += "</div><div>"+ data_date +"</div>";
+                        str += "<a href='/"+ data_url +"' class='search-result-item'>";
+                        str += "<div>"+ data_title +"</div>";
+                        str += "<div>";
+                        str += "<div>";
+                        str += "<div><i class='iconfont ic-category'></i>"+ data.categories[0] +"</div>";
+                        str += "<div><i class='iconfont ic-tag'></i>"+ data.tags[0] +"</div>";
+                        str += "</div>";
+                        str += "<div>"+ data_date +"</div>";
+                        str += "</div>";
                         str += "</a></li>";
                     }
                 });
