@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97198147-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<title>第“一”次博客的经历（二） · ZRyze</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author" content="zhangRyze">
+
+<link rel="short icon" type="image/x-icon" href="/images/favicon-icon.png">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/blog_basic.css">
+<link rel="stylesheet" href="/css/fonts/iconfont.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+</head>
+<body>
+    <div class="sidebar animated fadeInDown">
+	<div class="logo-title">
+		<div class="title">
+			<img src="/images/logo@2x.png" width="127">
+			<h3 title=''>
+				<a href="/">ZRyze</a>
+			</h3>
+			<div class="description">“不轻狂，枉年少”</div>
+		</div>
+	</div>
+	<ul class="nav-list">
+        
+    <li>
+        
+            <a href="/">首页</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/archives">归档</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/tagcloud">标签云</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/about">关于</a>
+        
+    </li>
+
+
+	</ul>
+	<ul class="social-links">
+		
+		
+		
+		
+			<li class="icon-weibo">
+				<a href="https://weibo.com/u/2285298924">
+					<i class="iconfont ic-weibo"></i>
+				</a>
+			</li>
+		
+		
+		
+			<li class="icon-github">
+				<a href="https://github.com/zhangRyze">
+					<i class="iconfont ic-github"></i>
+				</a>
+			</li>
+		
+		
+			<li class="icon-search">
+				<a href="javascript:void(0)" onclick="openSearch()">
+					<i class="iconfont ic-search"></i>
+				</a>
+			</li>
+		
+	</ul>
+	<div class="footer">
+	<!-- <div class="by_farbox">
+  		<a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank">Theme adapted from Anatole</a>
+	</div> -->
+	<div class="by_farbox">
+    	<a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281</a>
+	</div>
+</div>
+
+</div>
+
+    <div class="main">
+        <div class="content">
+	<div class="post-page">
+    	<div class="post animated fadeInDown">
+    <div class="post-title">
+        <h3>
+            
+                <a>第“一”次博客的经历（二）</a>
+            
+        </h3>
+    </div>
+    
+        <div class="post-info">
+    <div>
+        
+            <div>
+                <i class="iconfont ic-category"></i>
+                
+                    <a href="/categories/自个儿折腾/" title="自个儿折腾" class="tag">自个儿折腾 </a>
+                
+            </div>
+        
+        
+            <div>
+                <i class="iconfont ic-tag"></i>
+                
+                    <a href="/tags/Ruby/" title="Ruby" class="tag">Ruby </a>
+                
+                    <a href="/tags/Jeklly/" title="Jeklly" class="tag">Jeklly </a>
+                
+            </div>
+        
+    </div>
+    <div>
+        <div>
+            <i class="iconfont ic-date"></i>
+            <div class="date">2018-03-16</div>
+        </div>
+        <div class="post-hits" id="post-/2018/03/16/createBlogExperience-1/" data-post-path="/2018/03/16/createBlogExperience-1/" data-post-title="第“一”次博客的经历（二）"></div>
+    </div>
+</div>
+
+        <div class="post-content"><p>上篇文章大概讲完了怎么使用 <code>Github pages</code>，现在就研究一下怎么使用 <code>Jeklly</code>。</p>
+<h3 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h3><p>之前说过 <code>GitHub</code> 提供的主页实际上是基于 <code>GitHub</code> 的源代码实现的，所以只支持上传静态的网页，而 <a href="https://github.com/jekyll/jekyll" target="_blank" rel="noopener">Jekyll</a> 是一种模板转化引擎，同时也是 <code>Github</code> 上面的一个开源项目，同时它提供了模板、变量、插件等功能，也就是说只要上传符合 <code>Jekyll</code> 规范的文件，然后上传到 <code>Github</code>，由 <code>Github</code> 生成并托管整个网站。</p>
+<p><code>Jekyll</code> 是基于 <code>Ruby</code> 的，所以搭建 <code>Jekyll</code> 之前必须确保 <code>Ruby</code> 正常安装，<code>Jekyll</code> 的搭建基本都满足如下步骤:</p>
+<ul>
+<li>安装 <code>Ruby</code> (2.0.0以上)；</li>
+<li>切换 <code>Ruby</code> 的source来源；</li>
+<li>通过 <code>gem</code> 命令安装 <code>Jekyll</code>；</li>
+<li><code>github</code> 上选择一个心仪的 <code>Jekyll</code> 模板，本地 <code>Jekyll serve</code> 运行相应的博客；</li>
+</ul>
+<h3 id="Ruby-安装"><a href="#Ruby-安装" class="headerlink" title="Ruby 安装"></a>Ruby 安装</h3><h5 id="windows下安装"><a href="#windows下安装" class="headerlink" title="windows下安装"></a>windows下安装</h5><p>可以使用 <a href="https://rubyinstaller.org/downloads/" target="_blank" rel="noopener">Rubyinstaller</a> 安装。（<a href="https://www.ruby-lang.org/zh_cn/downloads/" target="_blank" rel="noopener">Ruby安装说明</a>）</p>
+<blockquote>
+<ul>
+<li>windows的安装还是比较无脑的，而我用的是mac装的，就不多说了。</li>
+<li>windows类似以下 GBK 报错解决方案，请参考这里的 <a href="https://github.com/imathis/octopress/issues/232#issuecomment-2480736" target="_blank" rel="noopener">解决方法</a>。<ul>
+<li>Error reading file F:/github.com/kaiye.github.com/index.html: invalid byte sequence in GBK</li>
+<li>[31m Liquid Exception: invalid byte sequence in GBK in alpha-layer.html[0m<br>error: invalid byte sequence in GBK. Use –trace to view backtrace</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h5 id="mac下安装"><a href="#mac下安装" class="headerlink" title="mac下安装"></a>mac下安装</h5><h6 id="安装-rvm"><a href="#安装-rvm" class="headerlink" title="安装 rvm"></a>安装 rvm</h6><p>可以先 <code>ruby -v</code> 查看下本地ruby版本号，如果是 1.9.2 以上的直接跳过该步。由于gem安装 <code>Jekyll</code> 需要 <code>Ruby</code> 1.9.2以上版本，现在官方推荐的是1.9.3，而 mac 自带的 <code>Ruby</code> 为1.8.6，所以需要先升级本地的 <code>ruby</code>，否则在安装的时候会出现类似<code>“instance of Date needs to have method &#39;marshal_load&#39;”</code>的报错。</p>
+<p>网上不少人使用源码安装来替换本地 <code>Ruby</code>，其实用 <code>rvm</code> 来管理多版本 <code>Ruby</code> 是更安全、方便的方案。<code>rvm</code> 的安装比较简单：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -L https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
+<p>安装好 <code>rvm</code> 后需要按照提示:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>将 <code>rvm</code> 添加到环境变量中。</p>
+<h6 id="安装-Ruby"><a href="#安装-Ruby" class="headerlink" title="安装 Ruby"></a>安装 Ruby</h6><p>接下来可以正式安装ruby了，这里可以先通过 rvm use 命令来获取详细的版本号，安装过程可参考以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ rvm use 1.9.3</span><br><span class="line">ruby-1.9.3-p392 is not installed.</span><br><span class="line">To install <span class="keyword">do</span>: <span class="string">'rvm install ruby-1.9.3-p392'</span></span><br><span class="line">$ rvm install ruby-1.9.3-p392</span><br></pre></td></tr></table></figure>
+<p>大概N分钟之后，ruby 以及 homebrew即可安装完成，且自动切换到最新版ruby。</p>
+<blockquote>
+<ul>
+<li>如果安装失败确认一下你电脑有没有安装 <code>macports</code>，由于 <code>rvm</code> 会通过 <code>homebrew</code> 来安装 <code>Ruby</code>，而 <code>homebrew</code> 与 <code>macports</code> 存在兼容性问题，如果不删除 <code>macports</code> 会导致安装失败。删除 <code>macports</code> 有一定风险，请先自行 <code>cd /opt/local</code> 确认软件均可删除。</li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo port -f uninstall installed</span><br><span class="line">$ sudo rm -rf /opt/<span class="built_in">local</span> ~/.macports</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><code>Ruby</code> 的版本和 <code>RubyDevKit</code> 的版本要对应，不要装错；</li>
+<li>目前新版的 <code>Ruby</code> 自带 <code>gem</code> 了，所以 <code>gem</code> 安装可以跳过；</li>
+<li>由于国内的网络，<code>gem</code> 推荐使用 <a href="https://ruby.taobao.org" target="_blank" rel="noopener">淘宝的镜像</a> 比较靠谱；</li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources -l</span><br><span class="line">$ gem sources --remove https://rubygems.org/</span><br><span class="line">$ gem sources -a http://ruby.taobao.org/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>修改来源后可以通过 <code>gem sources -l</code> 查看是否正确修改</li>
+</ul>
+</blockquote>
+<h3 id="安装-Jeklly"><a href="#安装-Jeklly" class="headerlink" title="安装 Jeklly"></a>安装 Jeklly</h3><p>安装jekyll前先按照依赖包bundler，下述命令即可安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install bundler</span><br></pre></td></tr></table></figure>
+<p>之后，直接可以通过下述命令安装jekyll</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install jekyll</span><br></pre></td></tr></table></figure>
+<p>安装需要一定的时间，过一段时间正常安装后即代表jekyll可以开始使用了</p>
+<h3 id="测试-运行-Jekyll-博客"><a href="#测试-运行-Jekyll-博客" class="headerlink" title="测试/运行 Jekyll 博客"></a>测试/运行 Jekyll 博客</h3><p>安装好之后就可以测试我们的环境了。用命令行进入到上一节我们创建的目录，执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jekyll serve --safe --watch</span><br></pre></td></tr></table></figure>
+<p><code>Jekyll</code> 此时会在 <code>localhost</code> 的 <code>4000</code> 端口监听 <code>http</code> 请求，用浏览器访问<code>http://localhost:4000/index.html</code>，之前的页面出现了！</p>
+<p>然后你可以去 <code>Github</code> 上 fork 一个自己喜欢的 <code>Jekyll</code> 模板，然后将对应的项目拷贝到自己本地的目录下，然后执行上面的方法你就可以看到你的博客了。</p>
+<hr>
+<h5 id="以上内容参考大神博文："><a href="#以上内容参考大神博文：" class="headerlink" title="以上内容参考大神博文："></a>以上内容参考大神博文：</h5><ul>
+<li><a href="http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html" target="_blank" rel="noopener">一步步在GitHub上创建博客主页 全系列</a>  by @pchou</li>
+<li><a href="http://www.dailichun.com/2016/10/29/jekyllbuild.html" target="_blank" rel="noopener">jekyll博客搭建之艰辛之路</a> by @Lichun Dai</li>
+</ul>
+</div>
+    
+</div>
+
+    	<div class="share">
+			<a class="evernote" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank">
+				<i class="iconfont ic-evernote"></i>
+			</a>
+			<a class="weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));">
+				<i class="iconfont ic-weibo"></i>
+			</a>
+    	</div>
+		<div class="pagination">
+	<ul class="clearfix">
+		
+			<li class="pre pagbuttons">
+				
+			</li>
+			<li class="next pagbuttons">
+				
+				<a href="/2018/03/15/createBlogExperience/" role="navigation" class="btn">下一页</a>
+				
+			</li>
+	</ul>
+</div>
+
+
+    	
+    		
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment" class="comment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '#comment',
+            notify: notify,
+            verify: verify,
+            appId: "H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz",
+            appKey: "22gf5wKdGEiPgbbGCyUtz0fr",
+            avatar:'monsterid',
+            placeholder: "说点什么吧",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+
+    	
+	</div>
+</div>
+
+    </div>
+    
+    <div id="local-search-box" class="local-search-box" style="display: none">
+        <input class="local-search-input" type="text" id="local-search-input" name="q" results="0" placeholder="搜索" />
+        <div class="local-search-list" id="local-search-result">
+            <div class="local-search-prompt">搜一搜看看吧 ~</div>
+        </div>
+    </div>
+
+    <div id="modal-container-bg" class="modal-container-bg" style="display: none" onclick="closeSearch()"></div>
+    <!-- js start -->
+	<script src="/js/av-live-query.js"></script>
+    <script>
+		AV.initialize("H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz","22gf5wKdGEiPgbbGCyUtz0fr");
+        $(function(){
+	    
+	            document.onkeydown = function(event) {
+	                var e = event || window.event || arguments.callee.caller.arguments[0];
+	                if (e && e.keyCode == 27) { // 按 Esc
+	                    closeSearch() //要做的事情
+	                }
+	            };
+
+	            var Counter = AV.Object.extend("Counter");
+	            // in post.html, so add 1 to hit counts
+	            addCount(Counter);
+	    
+        })
+    </script>
+    
+		<script src="/js/search.my.js"></script>
+    
+</body>
+</html>
