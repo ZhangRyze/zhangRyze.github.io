@@ -50,7 +50,7 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-  color: #4786D6;
+  color: #1073B9;
 }
 
 /*basic styles ends*/
@@ -152,17 +152,23 @@ a:hover, a:active {
   border-right: 1px solid #f2f2f2;
 }
 .sidebar .logo-title {
-  text-align: center;
   padding-top: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sidebar .logo-title .description {
   font-size: 14px;
   color: #565654;
 }
-.sidebar .logo-title .logo {
-  margin: 0 auto;
+.sidebar .logo-title .avatar{
+  width: 127px;
 }
-.sidebar .logo-title .title h3 {
+.sidebar .logo-title .avatar:hover{
+  transition: transform 1s;
+  transform: rotate(180deg);
+}
+.sidebar .logo-title h3 {
   /* text-transform: uppercase; */
   font-size: 2rem;
   font-weight: bold;
@@ -170,7 +176,7 @@ a:hover, a:active {
   line-height: 1;
   margin: 0;
 }
-.sidebar .logo-title .title a {
+.sidebar .logo-title a {
   text-decoration: none;
   color: #464646;
   font-size: 2rem;
@@ -241,10 +247,10 @@ a:hover, a:active {
 .post .post-content a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #4786D6;
+  color: #1073B9;
 }
 .post .post-content a:hover {
-  color: #2F69B3;
+  color: #1073B9;
 }
 .post .post-content h3 {
   color: #5F5F5F;

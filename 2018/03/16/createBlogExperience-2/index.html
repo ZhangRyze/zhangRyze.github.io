@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97198147-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<title>第“二”次博客的经历（一） · ZRyze</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author" content="zhangRyze">
+
+<link rel="short icon" type="image/x-icon" href="/images/favicon-icon.png">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/blog_basic.css">
+<link rel="stylesheet" href="/css/fonts/iconfont.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+</head>
+<body>
+    <div class="sidebar animated fadeInDown">
+	<div class="logo-title">
+		<div class="avatar">
+			<img src="/images/logo@2x.png">
+		</div>
+		<h3 title=''>
+			<a href="/">ZRyze</a>
+		</h3>
+		<div class="description">“不轻狂，枉年少”</div>
+	</div>
+	<ul class="nav-list">
+        
+    <li>
+        
+            <a href="/">首页</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/archives">归档</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/tagcloud">标签云</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/about">关于</a>
+        
+    </li>
+
+
+	</ul>
+	<ul class="social-links">
+		
+		
+		
+		
+			<li class="icon-weibo">
+				<a href="https://weibo.com/u/2285298924">
+					<i class="iconfont ic-weibo"></i>
+				</a>
+			</li>
+		
+		
+		
+			<li class="icon-github">
+				<a href="https://github.com/zhangRyze">
+					<i class="iconfont ic-github"></i>
+				</a>
+			</li>
+		
+		
+			<li class="icon-search">
+				<a href="javascript:void(0)" onclick="openSearch()">
+					<i class="iconfont ic-search"></i>
+				</a>
+			</li>
+		
+	</ul>
+	<div class="footer">
+	<!-- <div class="by_farbox">
+  		<a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank">Theme adapted from Anatole</a>
+	</div> -->
+	<div class="by_farbox">
+    	<a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281</a>
+	</div>
+</div>
+
+</div>
+
+    <div class="main">
+        <div class="content">
+	<div class="post-page">
+    	<div class="post animated fadeInDown">
+    <div class="post-title">
+        <h3>
+            
+                <a>第“二”次博客的经历（一）</a>
+            
+        </h3>
+    </div>
+    
+        <div class="post-info">
+    <div>
+        
+            <div>
+                <i class="iconfont ic-category"></i>
+                
+                    <a href="/categories/自个儿折腾/" title="自个儿折腾" class="tag">自个儿折腾 </a>
+                
+            </div>
+        
+        
+            <div>
+                <i class="iconfont ic-tag"></i>
+                
+                    <a href="/tags/node/" title="node" class="tag">node </a>
+                
+                    <a href="/tags/Hexo/" title="Hexo" class="tag">Hexo </a>
+                
+            </div>
+        
+    </div>
+    <div>
+        <div>
+            <i class="iconfont ic-date"></i>
+            <div class="date">2018-03-16</div>
+        </div>
+        <div class="post-hits" id="post-/2018/03/16/createBlogExperience-2/" data-post-path="/2018/03/16/createBlogExperience-2/" data-post-title="第“二”次博客的经历（一）"></div>
+    </div>
+</div>
+
+        <div class="post-content"><h3 id="写在开始之前"><a href="#写在开始之前" class="headerlink" title="写在开始之前"></a>写在开始之前</h3><p>自从上回折腾完博客 “不了了之” 之后时隔一年第二次折腾，是因为现在想写一些东西但是看着原来的那个主题不太满意在搜索浏览的过程中发现了 <code>Hexo</code>，比 <code>Jeklly</code> 功能差不多，然后就试着用 <code>Hexo</code> 重新搭建了博客。现在来分享一下过程。</p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p><code>Hexo</code> 是一个快速、简洁且高效的博客框架。同样使用 <code>Markdown</code>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p>安装 Hexo 相当简单，只需要用到两个工具：</p>
+<ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></li>
+<li><a href="https://git-scm.com" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<h5 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h5><ul>
+<li>Windows平台：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git</a>。</li>
+<li>Mac平台：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>：<code>brew install git</code> ；或下载 <a href="https://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a> 安装。</li>
+</ul>
+<h5 id="安装-node-js"><a href="#安装-node-js" class="headerlink" title="安装 node.js"></a>安装 node.js</h5><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>。<br>cURL：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
+<p>Wget:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
+<p>安装完成后，重启终端并执行下列命令即可安装 <code>node.js</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
+<p>或者您也可以下载 <a href="https://nodejs.org" target="_blank" rel="noopener">安装程序</a> 来安装。</p>
+<blockquote>
+<ul>
+<li>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选 <code>Add to PATH</code> 选项。</li>
+<li>另外，您也可以使用 <code>Git Bash</code>，这是 <code>git for windows</code> 自带的一组程序，提供了 <code>Linux</code> 风格的 <code>shell</code>，在该环境下，您可以直接用上面提到的命令来安装<code>Node.js</code>。打开它的方法很简单，在任意位置单击右键，选择 <code>Git Bash Here</code> 即可。由于 <code>Hexo</code> 的很多操作都涉及到命令行，您可以考虑始终使用 <code>Git Bash</code> 来进行操作。</li>
+</ul>
+</blockquote>
+<h5 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h5><p>所有必备的应用程序安装完成后，就可以使用 <code>npm</code> 安装 <code>Hexo</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="生成博客结构"><a href="#生成博客结构" class="headerlink" title="生成博客结构"></a>生成博客结构</h3><p>安装 <code>Hexo</code> 完成后，请执行下列命令，<code>Hexo</code> 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>folder</code> 可以是路径</p>
+</blockquote>
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<h5 id="文件-config-yml"><a href="#文件-config-yml" class="headerlink" title="文件 _config.yml"></a>文件 _config.yml</h5><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">配置</a> 信息，您可以在此配置大部分的参数，配置的参数都可以在博客布局中访问到。</p>
+<h5 id="文件-package-json"><a href="#文件-package-json" class="headerlink" title="文件 package.json"></a>文件 package.json</h5><figure class="highlight json"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"hexo"</span>: &#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">""</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"hexo"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-archive"</span>: <span class="string">"^0.1.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-category"</span>: <span class="string">"^0.1.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-index"</span>: <span class="string">"^0.1.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-tag"</span>: <span class="string">"^0.1.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-ejs"</span>: <span class="string">"^0.1.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-stylus"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-marked"</span>: <span class="string">"^0.2.4"</span>,</span><br><span class="line">    <span class="attr">"hexo-server"</span>: <span class="string">"^0.1.2"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置的应用程序信息，<a href="http://embeddedjs.com" target="_blank" rel="noopener">EJS</a>，<a href="http://stylus-lang.com" target="_blank" rel="noopener">Stylus</a> 和 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> renderer 已默认配置，您可以自由移除，也可以添加您需要的应用到 <code>dependencies</code> 中，然后执行下面命令安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h5 id="文件夹-scaffolds"><a href="#文件夹-scaffolds" class="headerlink" title="文件夹 scaffolds"></a>文件夹 scaffolds</h5><p>模版 的文件夹，当您新建文章时，<code>Hexo</code> 会根据 <code>scaffold</code> 来建立文件。<code>Hexo</code> 的模板是指在新建的 <code>markdown</code> 文件中默认填充的内容。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">'PostName'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>新建 post 的命令，修改<code>scaffold/post.md</code> 中的 <code>Front-matter</code> 内容，那么每次新建一篇文章时都会包含这个修改。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">'PageName'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>新建 page 的命令，修改<code>scaffold/page.md</code> 中的 <code>Front-matter</code> 内容，那么每次新建一篇文章时都会包含这个修改。</li>
+<li>新建<code>scaffold/xxxx.md</code> 文件，那么每次执行 <code>$ hexo new xxxx &#39;PageName&#39;</code> 新建一篇文章时都会包含这个修改。</li>
+<li>Front-matter 是用 <code>---</code> 包含的内容，博客渲染完是不显示在界面上，只存在该页面的参数里</li>
+</ul>
+</blockquote>
+<h5 id="文件夹-source"><a href="#文件夹-source" class="headerlink" title="文件夹 source"></a>文件夹 source</h5><p>资源文件夹是存放用户资源的地方，<code>Markdown(.md)</code> 和 <code>HTML</code> 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<blockquote>
+<p>除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件/文件夹和隐藏的文件将会被忽略。</p>
+</blockquote>
+<h5 id="文件夹-themes"><a href="#文件夹-themes" class="headerlink" title="文件夹 themes"></a>文件夹 themes</h5><p><a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="noopener">主题</a> 文件夹。<code>Hexo</code> 会根据主题来生成静态页面。会有一个默认的主题文件夹<br><code>landscape</code>，<code>landscape</code> 的默认语法是 <code>ejs</code>。</p>
+<ul>
+<li><p>主题的文件夹里也有个 <code>_config.yml</code> 文件，通常在配置一些跟主题相关的信息，例如：<code>menu</code>（菜单）等，当然在主文件夹的 <code>_config.yml</code> 中配置也可以，在这里主要是为了区别主题配置和网站配置。</p>
+</li>
+<li><p>主题文件夹中的 <code>language</code> 文件夹可以配置网站的语言，然后在主配置 <code>_config.yml</code> 文件中的 <code>language</code> 填入您想要显示的 <code>language</code> 文件夹中的语言文件名。在布局过程中使用 <code>__(value)</code> 方法转换您的关键词。</p>
+<blockquote>
+<ul>
+<li>语言仅限一些您在布局过程中网站的关键词。</li>
+<li>上述 <code>value</code> 是您在语言文件中的 <code>key</code> 值，<code>__(value)</code> 得到的是它对应的值。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>主题文件夹中的 <code>layout</code> 文件夹是放整个博客的布局的文件夹，用于存放主题的模板文件，决定了网站内容的呈现方式，<code>Hexo</code> 内建 <code>Swig</code> 模板引擎，您可以另外安装插件来获得 <a href="https://github.com/hexojs/hexo-renderer-ejs" target="_blank" rel="noopener">EJS</a>、<a href="https://github.com/hexojs/hexo-renderer-haml" target="_blank" rel="noopener">Haml</a> 或 <a href="https://github.com/hexojs/hexo-renderer-jade" target="_blank" rel="noopener">Jade（Pug）</a> 支持，<code>Hexo</code> 的默认主题 <code>landscape</code> 是使用 <code>Ejs</code>。<code>Hexo</code> 根据模板文件的扩展名来决定所使用的模板引擎，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">layout.ejs   - 使用 EJS</span><br><span class="line">layout.swig  - 使用 Swig</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主题文件夹中的 <code>source</code> 文件夹是资源文件夹，除了模板以外的 <code>Asset</code>，例如 <code>CSS</code>、<code>JavaScript</code> 文件等，都应该放在这个文件夹中。文件或文件夹开头名称为 _（下划线线）或隐藏的文件会被忽略。如果文件可以被渲染的话，会经过解析然后储存到 <code>public</code> 文件夹，否则会直接拷贝到 <code>public</code> 文件夹。</p>
+</li>
+</ul>
+<h3 id="最后的准备"><a href="#最后的准备" class="headerlink" title="最后的准备"></a>最后的准备</h3><p>接下来就差不多生成博客上传到 <code>Github pages</code> 上了，不过在这之前还得需要配置一下 <code>Git</code> 地址：</p>
+<p>在主配置文件 <code>_config.yml</code> 中，找到 <code>deploy</code> 一项，修改成你自己的 <code>Git</code> 地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/UserName/ProjectName.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>UserName</code> 和 <code>ProjectName</code> 是前面文章提到的你的 <code>GitHub</code> 的用户名和博客项目的项目名。</p>
+</blockquote>
+<p>在上传 <code>Github</code> 之前还可以通过命令行在本地预览博客内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>hexo 3.0把服务器独立成个别模块，需要单独安装：npm i hexo-server –save。</p>
+</blockquote>
+<p>然后打开浏览器，地址栏输入 <code>http://localhost:4000</code> ，就可以看到你自己的博客了。</p>
+<p>上传 <code>Github</code> 还需要一个插件 <code>hexo-deployer-git</code> ：</p>
+<ul>
+<li>你可以执行命令行 <code>npm install hexo-deployer-git --save</code> 安装 <code>hexo-deployer-git</code>。</li>
+<li>在 <code>package.json</code> 中的 <code>dependencies</code> 中添加，然后执行 <code>npm install</code> 安装 <code>hexo-deployer-git</code>。</li>
+</ul>
+<p>最后执行命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>在浏览器中输入 <code>http://ProjectName.github.io</code> 就可以看到你的个人博客啦！！！</p>
+<blockquote>
+<p>如果之前你第一次使用 <code>Git</code> 上传文件，在 <code>deploy</code> 的过程中需要输入你的 <code>UserName</code> 和 <code>Passward</code></p>
+</blockquote>
+</div>
+    
+</div>
+
+    	<div class="share">
+			<a class="evernote" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank">
+				<i class="iconfont ic-evernote"></i>
+			</a>
+			<a class="weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));">
+				<i class="iconfont ic-weibo"></i>
+			</a>
+    	</div>
+		<div class="pagination">
+	<ul class="clearfix">
+		
+			<li class="pre pagbuttons">
+				
+			</li>
+			<li class="next pagbuttons">
+				
+				<a href="/2018/03/16/createBlogExperience-1/" role="navigation" class="btn">下一页</a>
+				
+			</li>
+	</ul>
+</div>
+
+
+    	
+    		
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment" class="comment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '#comment',
+            notify: notify,
+            verify: verify,
+            appId: "H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz",
+            appKey: "22gf5wKdGEiPgbbGCyUtz0fr",
+            avatar:'monsterid',
+            placeholder: "说点什么吧",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+
+    	
+	</div>
+</div>
+
+    </div>
+    
+    <div id="local-search-box" class="local-search-box" style="display: none">
+        <input class="local-search-input" type="text" id="local-search-input" name="q" results="0" placeholder="搜索" />
+        <div class="local-search-list" id="local-search-result">
+            <div class="local-search-prompt">搜一搜看看吧 ~</div>
+        </div>
+    </div>
+
+    <div id="modal-container-bg" class="modal-container-bg" style="display: none" onclick="closeSearch()"></div>
+    <!-- js start -->
+	<script src="/js/av-live-query.js"></script>
+    <script>
+		AV.initialize("H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz","22gf5wKdGEiPgbbGCyUtz0fr");
+        $(function(){
+	    
+	            document.onkeydown = function(event) {
+	                var e = event || window.event || arguments.callee.caller.arguments[0];
+	                if (e && e.keyCode == 27) { // 按 Esc
+	                    closeSearch() //要做的事情
+	                }
+	            };
+
+	            var Counter = AV.Object.extend("Counter");
+	            // in post.html, so add 1 to hit counts
+	            addCount(Counter);
+	    
+        })
+    </script>
+    
+		<script src="/js/search.my.js"></script>
+    
+</body>
+</html>

@@ -154,10 +154,13 @@ figure.highlight.cpp .code:after {
   content: "CPP"
 }
 
-figure.highlight.cpp .code:after {
+figure.highlight.c .code:after {
   content: 'C++'
 }
-
+figure.highlight figcaption{
+  padding: 5px 10px !important;
+  border-bottom: 1px solid #fff;
+}
 pre {
   color: #525252!important;
 }
@@ -322,7 +325,7 @@ dl dt {
                       white-space: pre-wrap;
                       border: 1px solid #E3EDF3;
                       background: #f7f7f9;
-                      color: #d14;
+                      color: #BF2932;
                       border-radius: 2px; }
                     code{
                       padding: 1px 3px;
@@ -330,7 +333,7 @@ dl dt {
                       white-space: pre-wrap;
                       background: #f7f7f9;
                       overflow-x: auto;
-                      color: #d14;
+                      color: #BF2932;
                       border-radius: 2px; }
 /**
                       pre {
