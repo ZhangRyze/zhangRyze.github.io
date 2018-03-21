@@ -163,9 +163,9 @@ a:hover, a:active {
 }
 .sidebar .logo-title .avatar{
   width: 127px;
+  transition: transform 1s;
 }
 .sidebar .logo-title .avatar:hover{
-  transition: transform 1s;
   transform: rotate(180deg);
 }
 .sidebar .logo-title h3 {
