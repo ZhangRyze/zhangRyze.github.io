@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97198147-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<title>ES6学习笔记 —— async 函数学习 · ZRyze</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author" content="zhangRyze">
+
+<link rel="short icon" type="image/x-icon" href="/images/favicon-icon.png">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/blog_basic.css">
+<link rel="stylesheet" href="/css/fonts/iconfont.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+</head>
+<body>
+    <div class="sidebar animated fadeInDown">
+	<div class="logo-title">
+		<div class="avatar">
+			<img src="/images/logo@2x.png">
+		</div>
+		<h3 title=''>
+			<a href="/">ZRyze</a>
+		</h3>
+		<div class="description">“不轻狂，枉年少”</div>
+	</div>
+	<ul class="nav-list">
+        
+    <li>
+        
+            <a href="/">首页</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/archives">归档</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/tagcloud">标签云</a>
+        
+    </li>
+
+    <li>
+        
+            <a href="/about">关于</a>
+        
+    </li>
+
+
+	</ul>
+	<ul class="social-links">
+		
+		
+		
+		
+			<li class="icon-weibo">
+				<a href="https://weibo.com/u/2285298924">
+					<i class="iconfont ic-weibo"></i>
+				</a>
+			</li>
+		
+		
+		
+			<li class="icon-github">
+				<a href="https://github.com/zhangRyze">
+					<i class="iconfont ic-github"></i>
+				</a>
+			</li>
+		
+		
+			<li class="icon-search">
+				<a href="javascript:void(0)" onclick="openSearch()">
+					<i class="iconfont ic-search"></i>
+				</a>
+			</li>
+		
+	</ul>
+	<div class="footer">
+	<!-- <div class="by_farbox">
+  		<a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank">Theme adapted from Anatole</a>
+	</div> -->
+	<div class="by_farbox">
+    	<a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281</a>
+	</div>
+</div>
+
+</div>
+
+    <div class="main">
+        <div class="content">
+	<div class="post-page">
+    	<div class="post animated fadeInDown">
+    <div class="post-title">
+        <h3>
+            
+                <a>ES6学习笔记 —— async 函数学习</a>
+            
+        </h3>
+    </div>
+    
+        <div class="post-info">
+    <div>
+        
+        
+            <div>
+                <i class="iconfont ic-tag"></i>
+                
+                    <a href="/tags/ES6/" title="ES6" class="tag">ES6 </a>
+                
+                    <a href="/tags/javaScript/" title="javaScript" class="tag">javaScript </a>
+                
+            </div>
+        
+    </div>
+    <div>
+        <div>
+            <i class="iconfont ic-date"></i>
+            <div class="date">2018-09-07</div>
+        </div>
+        <div class="post-hits" id="post-/2018/09/07/async-1/" data-post-path="/2018/09/07/async-1/" data-post-title="ES6学习笔记 —— async 函数学习"></div>
+    </div>
+</div>
+
+        <div class="post-content"><h3 id="写在开始之前"><a href="#写在开始之前" class="headerlink" title="写在开始之前"></a>写在开始之前</h3><p>在异步处理方案中，目前最为简洁优雅的便是 <code>async</code> 函数。它本质是 <code>Generator</code> 函数的语法糖，通俗的说法是使用 <code>Generator</code> 函数进行异步处理的增强版，使多个相关的异步操作如同同步操作一样聚合起来，在语法上看上去更像同步函数。</p>
+<h3 id="async-函数形式"><a href="#async-函数形式" class="headerlink" title="async 函数形式"></a>async 函数形式</h3><p><code>async</code> 函数也是函数，所以具有普通函数该有的性质。不过形式上有两点不同：一是定义 <code>async</code> 函数时，function关键字前需要有 <code>async</code> 关键字（意为异步），表示这是个 <code>async</code> 函数。二是在 <code>async</code> 函数内部可以使用 <code>await</code> 关键字（意为等待），表示会将其后面跟随的结果当成异步操作并等待其完成。</p>
+<p>以下是已经存在的异步函数变体。请注意无处不在的 <code>async</code> 关键字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 声明式</span><br><span class="line">async function A() &#123;&#125;</span><br><span class="line"></span><br><span class="line">// 表达式</span><br><span class="line">let A = async function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// 作为对象属性</span><br><span class="line">let o = &#123;</span><br><span class="line">  A: async function () &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 作为对象属性的简写式</span><br><span class="line">let o = &#123;</span><br><span class="line">  async A() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 箭头函数</span><br><span class="line">let o = &#123;</span><br><span class="line">  A: async () =&gt; &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="async-函数总是返回-Promises"><a href="#async-函数总是返回-Promises" class="headerlink" title="async 函数总是返回 Promises"></a>async 函数总是返回 Promises</h3><p>执行 <code>async</code> 函数，会固定的返回一个 <code>Promise</code> 对象。</p>
+<p>得到该对象后便可监设置成功或失败时的回调函数进行监听。如果函数执行顺利并结束，返回的 <code>Promise</code> 对象的状态会从等待转变成成功，并输出 return 命令的返回结果（没有则为undefined）。如果函数执行途中失败，JS会认为 <code>async</code> 函数已经完成执行，返回的 <code>Promise</code> 对象的状态会从等待转变成失败，并输出错误信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 成功执行案例</span><br><span class="line"></span><br><span class="line">A1().then(res =&gt; &#123;</span><br><span class="line">  console.log(&apos;执行成功&apos;, res); // 10</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">async function A1() &#123;</span><br><span class="line">  let n = 1 * 10;</span><br><span class="line">  return n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 失败执行案例</span><br><span class="line"></span><br><span class="line">A2().catch(err =&gt; &#123;</span><br><span class="line">  console.log(&apos;执行失败&apos;, err); // i is not defined.</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">async function A2() &#123;</span><br><span class="line">  let n = 1 * i;</span><br><span class="line">  return n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="通过-await-处理-async-计算的结果和错误"><a href="#通过-await-处理-async-计算的结果和错误" class="headerlink" title="通过 await 处理 async 计算的结果和错误"></a>通过 await 处理 async 计算的结果和错误</h3><p>只有在 <code>async</code> 函数内部才可以使用 <code>await</code> 命令，存在于 <code>async</code> 函数内部的普通函数也不行。</p>
+<p><code>await</code> 等待其操作对象 <code>Promise</code> 返回：</p>
+<ul>
+<li>如果 <code>Promise</code> 是完成状态，<code>await</code> 的结果是完成态的值。</li>
+<li>如果 <code>Promise</code> 是拒绝状态，<code>await</code> 会抛出拒绝值。</li>
+</ul>
+<p>最后，<code>async</code> 函数中的 <code>return x</code> 表达式，相当于 <code>return await x</code> 的简写。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 成功执行案例</span><br><span class="line"></span><br><span class="line">A1().then(res =&gt; &#123;</span><br><span class="line">  console.log(&apos;执行成功&apos;, res); // 约两秒后输出100。</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">async function A1() &#123;</span><br><span class="line">  let n1 = await 10;</span><br><span class="line">  let n2 = await new Promise(resolve =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      resolve(10);</span><br><span class="line">    &#125;, 2000);</span><br><span class="line">  &#125;);</span><br><span class="line">  return n1 * n2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 失败执行案例</span><br><span class="line"></span><br><span class="line">A2().catch(err =&gt; &#123;</span><br><span class="line">  console.log(&apos;执行失败&apos;, err); // 约两秒后输出10。</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">async function A2() &#123;</span><br><span class="line">  let n1 = await 10;</span><br><span class="line">  let n2 = await new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      reject(10);</span><br><span class="line">    &#125;, 2000);</span><br><span class="line">  &#125;);</span><br><span class="line">  return n1 * n2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="继发与并发"><a href="#继发与并发" class="headerlink" title="继发与并发"></a>继发与并发</h3><p>对于存在于JS语句（ <code>for</code>, <code>while</code> 等）的 <code>await</code> 命令，引擎遇到时也会暂停执行。这意味着可以直接使用循环语句处理多个异步。</p>
+<p>以下是处理继发的两个例子。<code>async</code> 函数处理相继发生的异步尤为简洁，整体上与同步代码无异。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 两个方法A1和A2的行为结果相同，都是每隔一秒输出10，输出三次。</span><br><span class="line"></span><br><span class="line">async function A1() &#123;</span><br><span class="line">  let n1 = await createPromise();</span><br><span class="line">  console.log(&apos;N1&apos;, n1);</span><br><span class="line">  let n2 = await createPromise();</span><br><span class="line">  console.log(&apos;N2&apos;, n2);</span><br><span class="line">  let n3 = await createPromise();</span><br><span class="line">  console.log(&apos;N3&apos;, n3);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function A2() &#123;</span><br><span class="line">  for (let i = 0; i&lt; 3; i++) &#123;</span><br><span class="line">    let n = await createPromise();</span><br><span class="line">    console.log(&apos;N&apos; + (i + 1), n);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function createPromise() &#123;</span><br><span class="line">  return new Promise(resolve =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      resolve(10);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来是处理并发的三个例子。A1函数使用了 <code>Promise.all</code> 生成一个聚合异步，虽然简单但灵活性降低了，只有都成功和失败两种情况。A3函数相对A2仅仅为了说明应该怎样配合数组的遍历方法使用 <code>async</code> 函数。重点在A2函数的理解上。</p>
+<p>A2函数使用了循环语句，实际是继发的获取到各个异步值，但在总体的时间上相当并发（这里需要好好理解一番）。因为一开始创建 <code>reqs</code> 数组时，就已经开始执行了各个异步，之后虽然是逐一继发获取，但总花费时间与遍历顺序无关，恒等于耗时最多的异步所花费的时间（不考虑遍历、执行等其它的时间消耗）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// 三个方法A1, A2和A3的行为结果相同，都是在约一秒后输出[10, 10, 10]。</span><br><span class="line"></span><br><span class="line">async function A1() &#123;</span><br><span class="line">  let res = await Promise.all([createPromise(), createPromise(), createPromise()]);</span><br><span class="line">  console.log(&apos;Data&apos;, res);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function A2() &#123;</span><br><span class="line">  let res = [];</span><br><span class="line">  let reqs = [createPromise(), createPromise(), createPromise()];</span><br><span class="line">  for (let i = 0; i&lt; reqs.length; i++) &#123;</span><br><span class="line">    res[i] = await reqs[i];</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(&apos;Data&apos;, res);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function A3() &#123;</span><br><span class="line">  let res = [];</span><br><span class="line">  let reqs = [9, 9, 9].map(async (item) =&gt; &#123;</span><br><span class="line">    let n = await createPromise(item);</span><br><span class="line">    return n + 1;</span><br><span class="line">  &#125;);</span><br><span class="line">  for (let i = 0; i&lt; reqs.length; i++) &#123;</span><br><span class="line">    res[i] = await reqs[i];</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(&apos;Data&apos;, res);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function createPromise(n = 10) &#123;</span><br><span class="line">  return new Promise(resolve =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      resolve(n);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>一旦 <code>await</code> 后面的 <code>Promise</code> 转变成 <code>rejected</code>，整个 <code>async</code> 函数便会终止。然而很多时候我们不希望因为某个异步操作的失败，就终止整个函数，因此需要进行合理错误处理。注意，这里所说的错误不包括引擎解析或执行的错误，仅仅是状态变为 <code>rejected</code> 的 <code>Promise</code> 对象。</p>
+<p>处理的方式有两种：一是先行包装 <code>Promise</code> 对象，使其始终返回一个成功的<code>Promise</code>。二是使用 <code>try.catch</code> 捕获错误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// A1和A2都执行成，且返回值为10。</span><br><span class="line">A1().then(console.log);</span><br><span class="line">A2().then(console.log);</span><br><span class="line"></span><br><span class="line">async function A1() &#123;</span><br><span class="line">  let n;</span><br><span class="line">  n = await createPromise(true);</span><br><span class="line">  return n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function A2() &#123;</span><br><span class="line">  let n;</span><br><span class="line">  try &#123;</span><br><span class="line">    n = await createPromise(false);</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    n = e;</span><br><span class="line">  &#125;</span><br><span class="line">  return n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function createPromise(needCatch) &#123;</span><br><span class="line">  let p = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    reject(10);</span><br><span class="line">  &#125;);</span><br><span class="line">  return needCatch ? p.catch(err =&gt; err) : p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="理解-async-函数"><a href="#理解-async-函数" class="headerlink" title="理解 async 函数"></a>理解 async 函数</h3><p>前面中已经提及，<code>async</code> 函数是使用 <code>Generator</code> 函数进行异步处理的增强版。既然如此，我们就从其改进的方面入手，来看看其基于 <code>Generator</code> 函数的实现原理。 <code>async</code> 函数相对 <code>Generator</code> 函数的改进体现在这几个方面：更好的语义，内置执行器和返回值是 <code>Promise</code>。</p>
+<p>更好的语义。 <code>Generator</code> 函数通过在 <code>function</code> 后使用 <code>*</code> 来标识此为 <code>Generator</code> 函数，而 <code>async</code> 函数则是在 <code>function</code> 前加上 <code>async</code> 关键字。在 <code>Generator</code> 函数中可以使用 <code>yield</code> 命令暂停执行和交出执行权，而 <code>async</code> 函数是使用 <code>await</code> 来等待异步返回结果。很明显，<code>async</code> 和 <code>await</code> 更为语义化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// G函数</span><br><span class="line">function* request() &#123;</span><br><span class="line">  let n = yield createPromise();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// A函数</span><br><span class="line">async function request() &#123;</span><br><span class="line">  let n = await createPromise();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function createPromise() &#123;</span><br><span class="line">  return new Promise(resolve =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      resolve(10);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>内置执行器。调用 <code>async</code> 函数便会一步步自动执行和等待异步操作，直到结束。如果需要使用 <code>Generator</code> 函数来自动执行异步操作，需要为其创建一个自执行器。通过自执行器来自动化 <code>Generator</code> 函数的执行，其行为与 <code>async</code> 函数基本相同。可以说，<code>async</code> 函数相对 <code>Generator</code> 函数最大改进便是内置了自执行器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">// 两者都是每隔一秒钟打印出10，重复两次。</span><br><span class="line"></span><br><span class="line">// A函数</span><br><span class="line">A();</span><br><span class="line"></span><br><span class="line">async function A() &#123;</span><br><span class="line">  let n1 = await createPromise();</span><br><span class="line">  console.log(n1);</span><br><span class="line">  let n2 = await createPromise();</span><br><span class="line">  console.log(n2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// G函数，使用自执行器执行。</span><br><span class="line">spawn(G);</span><br><span class="line"></span><br><span class="line">function* G() &#123;</span><br><span class="line">  let n1 = yield createPromise();</span><br><span class="line">  console.log(n1);</span><br><span class="line">  let n2 = yield createPromise();</span><br><span class="line">  console.log(n2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function spawn(genF) &#123;</span><br><span class="line">  return new Promise(function(resolve, reject) &#123;</span><br><span class="line">    const gen = genF();</span><br><span class="line">    function step(nextF) &#123;</span><br><span class="line">      let next;</span><br><span class="line">      try &#123;</span><br><span class="line">        next = nextF();</span><br><span class="line">      &#125; catch(e) &#123;</span><br><span class="line">        return reject(e);</span><br><span class="line">      &#125;</span><br><span class="line">      if(next.done) &#123;</span><br><span class="line">        return resolve(next.value);</span><br><span class="line">      &#125;</span><br><span class="line">      Promise.resolve(next.value).then(function(v) &#123;</span><br><span class="line">        step(function() &#123; return gen.next(v); &#125;);</span><br><span class="line">      &#125;, function(e) &#123;</span><br><span class="line">        step(function() &#123; return gen.throw(e); &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    step(function() &#123; return gen.next(undefined); &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function createPromise() &#123;</span><br><span class="line">  return new Promise(resolve =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      resolve(10);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</div>
+    
+</div>
+
+    	<div class="share">
+			<a class="evernote" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank">
+				<i class="iconfont ic-evernote"></i>
+			</a>
+			<a class="weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));">
+				<i class="iconfont ic-weibo"></i>
+			</a>
+    	</div>
+		<div class="pagination">
+	<ul class="clearfix">
+		
+			<li class="pre pagbuttons">
+				
+			</li>
+			<li class="next pagbuttons">
+				
+				<a href="/2018/04/17/VuePrinciple-1/" role="navigation" class="btn">下一页</a>
+				
+			</li>
+	</ul>
+</div>
+
+
+    	
+    		
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment" class="comment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '#comment',
+            notify: notify,
+            verify: verify,
+            appId: "H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz",
+            appKey: "22gf5wKdGEiPgbbGCyUtz0fr",
+            avatar:'monsterid',
+            placeholder: "说点什么吧",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+
+    	
+	</div>
+</div>
+
+    </div>
+    
+    <div id="local-search-box" class="local-search-box" style="display: none">
+        <input class="local-search-input" type="text" id="local-search-input" name="q" results="0" placeholder="搜索" />
+        <div class="local-search-list" id="local-search-result">
+            <div class="local-search-prompt">搜一搜看看吧 ~</div>
+        </div>
+    </div>
+
+    <div id="modal-container-bg" class="modal-container-bg" style="display: none" onclick="closeSearch()"></div>
+    <!-- js start -->
+	<script src="/js/av-live-query.js"></script>
+    <script>
+		AV.initialize("H4lyfaqzxLrMuHbyHDohIFvf-gzGzoHsz","22gf5wKdGEiPgbbGCyUtz0fr");
+        $(function(){
+	    
+	            document.onkeydown = function(event) {
+	                var e = event || window.event || arguments.callee.caller.arguments[0];
+	                if (e && e.keyCode == 27) { // 按 Esc
+	                    closeSearch() //要做的事情
+	                }
+	            };
+
+	            var Counter = AV.Object.extend("Counter");
+	            // in post.html, so add 1 to hit counts
+	            addCount(Counter);
+	    
+        })
+    </script>
+    
+		<script src="/js/search.my.js"></script>
+    
+</body>
+</html>
